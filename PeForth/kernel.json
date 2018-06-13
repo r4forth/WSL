@@ -1,0 +1,9 @@
+{
+  "argv": [
+    "python",
+    "/home/daniel/miniconda/lib/python3.6/site-packages/peforth/peforthkernel.py",
+    "-f",
+    "{connection_file}"
+  ],
+  "display_name": "peforth"
+}
