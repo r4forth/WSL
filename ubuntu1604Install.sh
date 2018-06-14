@@ -145,7 +145,10 @@ pip install peforth
 # 建立目錄
 mkdir ~/miniconda/share/jupyter/kernels/peforth
 # 複製設定檔到 Kernel 目錄
-cp /mnt/c/Users/$USER/Desktop/WSL/PeForth/kernel.json ~/miniconda/share/jupyter/kernels/peforth
+# cp /mnt/c/Users/$USER/Desktop/WSL/PeForth/kernel.json ~/miniconda/share/jupyter/kernels/peforth
+# 改寫成使用 Github 專案的版本
+cp ~/WSL/PeForth/kernel.json ~/miniconda/share/jupyter/kernels/peforth
+
 
 # =============================================================================
 # 支援 R 核心
