@@ -39,7 +39,7 @@ set t_Co=256                            " 設定終端機顏色為256色
 " ==========
 " 游標控制
 " ==========
-set cursorline                         " 高亮度顯示當前列
+set cursorline                          " 高亮度顯示當前列
 set cursorcolumn                        " 高亮度顯示當前行
 " ==========
 " 縮排設定
