@@ -2,7 +2,10 @@
 # FigTaiwan PeForth 與 ReForth 開發環境
 # 適用於: Ubuntu Server / WSL Ubuntu 
 # Version 0.1:	2018.06.09
-# 				01. 安裝 C、NodeJS、PeForth、R、Python3
+#   01. 安裝 C、NodeJS、PeForth、R、Python3
+# Version 0.2:  2018.06.14
+#   01. 安裝 RStudioServer 
+#   02. 安裝 Tex 環境支援 PDF 文件產出    
 # =============================================================================
 # 更新套件
 sudo apt-get update
@@ -17,6 +20,13 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # 請記得修改路徑 "/mnt/c/Users/使用者名稱/Desktop/WSL/"
 # 此行僅限 WSL 環境使用，複製 vim 設定檔到家目錄
 cp /mnt/c/Users/$USER/Desktop/WSL/vimrc ~/.vimrc
+
+# =============================================================================
+# 使用 Github 上的 WSL 目錄下 ubuntu1604Install.sh 安裝
+# 專案網址: https://github.com/r4forth/WSL.git
+# ============================================================================= 
+# git clone https://github.com/r4forth/WSL.git
+# source ~/WSL/ubuntu1604Install.sh
 
 # =============================================================================
 # 處理 WSL 預設 OpenSSH Server 設定問題
@@ -90,7 +100,7 @@ sed -i '229s/#//' ~/.jupyter/jupyter_notebook_config.py
 # 安裝 Jupyter notebook 各種程式語言支援核心
 # 參考連結: https://github.com/jupyter/jupyter/wiki/Jupyter-kernels
 # =============================================================================
-# 2018.06.08 感謝社團法人符式推廣協會陳爽先生、陳厚成先生、先後移植 JeForth 與
+# 2018.06.08 感謝社團法人台灣符式推廣協會陳爽先生與陳厚成先生、先後移植 JeForth 與
 # PeForth 至 Jupyter Notebook 環境，讓我們可以自由地進行程式語言教學。
 
 # 預計支援的程式語言核心有:
