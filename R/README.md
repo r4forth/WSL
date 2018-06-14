@@ -116,7 +116,24 @@
 * [R Compiler 套件：加速 R 程式碼的執行速度](https://blog.gtwang.org/r/r-compiler-speed-up/)
 * []()
 
+## 郭耀仁
+
+* []
+
+
 
 ## GitHub 專案庫
 
-* []()
+* [郭耀仁](https://github.com/yaojenkuo)
+
+
+
+## 來自大陸的消息
+
+
+## 日文資源
+
+
+## 德文資源
+
+
