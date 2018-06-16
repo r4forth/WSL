@@ -27,6 +27,7 @@ cp ~/WSL/vimrc ~/.vimrc
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
 bash ~/Miniconda3-latest-MacOSX-x86_64.sh -b -p $HOME/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -b -p $HOME/miniconda
 # 移動安裝檔案
+mkdir ~/Desktop/WSL
 mv Miniconda3-latest-MacOSX-x86_64.sh  ~/Desktop/WSL/Miniconda3-latest-Linux-x86_64.sh
 # 新增環境變數路徑
 sed -i '$ a\export PATH="$HOME/miniconda/bin:$PATH"' ~/.bashrc
