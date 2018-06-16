@@ -29,9 +29,11 @@ bash ~/Miniconda3-latest-MacOSX-x86_64.sh -b -p $HOME/miniconda/Miniconda3-lates
 # 移動安裝檔案
 mkdir ~/Desktop/WSL
 mv Miniconda3-latest-MacOSX-x86_64.sh  ~/Desktop/WSL/Miniconda3-latest-Linux-x86_64.sh
-# 新增環境變數路徑
-sed -i '$ a\export PATH="$HOME/miniconda/bin:$PATH"' ~/.bashrc
-source ~/.bashrc
+# 新增環境變數路徑，OSX 要先新增 .bash_profile 檔案
+touch ~/.bash_profile
+# OSX 要修正指令
+echo "export PATH=$HOME/miniconda/bin:$PATH" >> ~/.bash_profile
+source ~/.bash_profile
 
 # 更新 pip
 pip install --upgrade pip
