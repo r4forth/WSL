@@ -73,6 +73,7 @@ cp ~/WSL/PeForth/kernel.json ~/miniconda/share/jupyter/kernels/peforth
 # 安裝 R 環境
 brew install R
 
+# 待確認
 # brew install openssl@1.1
 # sudo chown -R $(whoami) $(brew --prefix)/*
 # brew install -y pkg-config
