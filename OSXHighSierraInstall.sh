@@ -17,10 +17,22 @@
 # =============================================================================
 # 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# =============================================================================
+# 視情況而定安裝圖形介面的 Homebrew 的套件管理工具
+# Cakebrew : https://www.cakebrew.com/
+# =============================================================================
+# 安裝 wget(抓取網頁、檔案的工具程式)
 brew install -y wget
-brew install -y vim git
+# 安裝 vim(Unix/Linux 系統常見的文字編輯器)
+# 相依套件 gettext, libunistring, libidn2, openssl
+brew install -y vim 
+# 安裝 git(程式碼管理系統)
+brew install -y git
+# 複製 VIM 套件管理器專案
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# 複製本教學專案內容
 git clone https://github.com/r4forth/WSL.git
+# 複製教學專案中的 .vimrc 設定，請試個人狀況決定是否執行。
 cp ~/WSL/vimrc ~/.vimrc
 
 # =============================================================================
@@ -39,6 +51,7 @@ mv Miniconda3-latest-MacOSX-x86_64.sh  ~/Desktop/WSL/Miniconda3-latest-Linux-x86
 touch ~/.bash_profile
 # OSX 要修正指令
 echo "export PATH=$HOME/miniconda/bin:$PATH" >> ~/.bash_profile
+# 載入設定檔，使環境變數生效
 source ~/.bash_profile
 
 # 更新 pip
@@ -46,6 +59,10 @@ pip install --upgrade pip
 
 # 安裝 jupyter notebook
 conda install jupyter -y
+
+# 安裝 jupyter lab
+# 參考連結: https://github.com/jupyterlab/jupyterlab
+conda install -c conda-forge jupyterlab
 
 # =============================================================================
 # 支援 nodejs 核心
@@ -84,13 +101,10 @@ sed -i -e '4s/~/./' ~/miniconda/share/jupyter/kernels/peforth/kernel.json
 # 安裝 R 環境
 brew install R
 
-# 待確認
-# brew install openssl@1.1
-# sudo chown -R $(whoami) $(brew --prefix)/*
-# brew install -y pkg-config
-
-# echo "export PATH=/usr/local/Cellar/openssl/1.0.2o_1/bin:$PATH" >> ~/.bash_profile
-# source ~/.bash_profile
+# 修正系統使用的 openssl 版本  
+echo "export PATH=/usr/local/Cellar/openssl/1.0.2o_1/bin:$PATH" >> ~/.bash_profile
+# 更新環境變數
+source ~/.bash_profile
 
 # 命令列環境執行 R 指令
 # 進入到 R 環境
