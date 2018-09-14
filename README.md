@@ -41,4 +41,5 @@
 3. Python3
 4. R
 5. PeForth
-6. 待續
+6. MicroPython
+7. 待續
