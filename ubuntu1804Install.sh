@@ -39,11 +39,16 @@ conda install jupyter -y
 # 修改設定檔，允許遠端登入
 # 產生 Jupyter notebook 設定檔
 jupyter notebook --generate-config
-sed -i '200s/#//' ~/.jupyter/jupyter_notebook_config.py
-sed -i '200s/localhost/*/' ~/.jupyter/jupyter_notebook_config.py
-sed -i '252s/#//' ~/.jupyter/jupyter_notebook_config.py
-sed -i '252s/True/False/' ~/.jupyter/jupyter_notebook_config.py
-sed -i '261s/#//' ~/.jupyter/jupyter_notebook_config.py
+# 2019.02.12 修正
+# 允許本機以外的 IP 連入
+sed -i '204s/#//' ~/.jupyter/jupyter_notebook_config.py
+sed -i '204s/localhost/0.0.0.0/' ~/.jupyter/jupyter_notebook_config.py
+# 不直接開啟瀏覽器
+sed -i '267s/#//' ~/.jupyter/jupyter_notebook_config.py
+sed -i '267s/True/False/' ~/.jupyter/jupyter_notebook_config.py
+# 不使用密碼，可直接使用
+sed -i '340s/#//' ~/.jupyter/jupyter_notebook_config.py
+sed -i '340s/<generated>//' ~/.jupyter/jupyter_notebook_config.py
 
 # =============================================================================
 # 安裝 Jupyter notebook 各種程式語言支援核心
