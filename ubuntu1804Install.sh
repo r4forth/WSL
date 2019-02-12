@@ -83,7 +83,8 @@ pip install peforth
 # 建立目錄
 mkdir ~/miniconda/share/jupyter/kernels/peforth
 # 改寫成使用 Github 專案的版本
-cp ~/myBionic/PeForth/kernel.json ~/miniconda/share/jupyter/kernels/peforth
+# 2019.02.20 修正設定
+cp ~/myBionic/kernel.json ~/miniconda/share/jupyter/kernels/peforth
 sed -i '4s/3.6/3.7/' ~/miniconda/share/jupyter/kernels/peforth/kernel.json
 sed -i '4s/~/./' ~/miniconda/share/jupyter/kernels/peforth/kernel.json
 # =============================================================================
@@ -91,9 +92,14 @@ sed -i '4s/~/./' ~/miniconda/share/jupyter/kernels/peforth/kernel.json
 # 參考連結: https://irkernel.github.io/
 # =============================================================================
 # 安裝 R 環境
+# 如果是用 mini.iso 安裝系統，需要額外安裝 gnupg 套件
+sudo apt-get install -y gnupg
 # 加入公鑰
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
 # 加入套件來源
+# 如果是用 mini.iso 安裝系統，需要額外安裝其他套件才能支援 add-apt-repository 
+sudo apt -y install software-properties-common dirmngr apt-transport-https lsb-release ca-certificates
+# 加入 R 套件庫，選用元智大學
 sudo add-apt-repository 'deb https://ftp.yzu.edu.tw/CRAN/bin/linux/ubuntu bionic-cran35/'
 # 更新系統與安裝 R 環境
 sudo apt-get update
