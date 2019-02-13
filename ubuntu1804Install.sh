@@ -61,6 +61,9 @@ sed -i '340s/<generated>//' ~/.jupyter/jupyter_notebook_config.py
 # 參考連結: https://github.com/n-riesco/ijavascript
 # =============================================================================
 # 使用 miniconda 方式安裝
+# 缺開發工具時需要手動安裝 build-essential
+# sudo apt install -y build-essential
+# 問題待解
 conda install nodejs -y
 npm install -g ijavascript
 ijsinstall
