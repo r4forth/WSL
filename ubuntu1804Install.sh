@@ -21,6 +21,27 @@ git clone https://github.com/r4forth/myBionic.git
 # 複製 vimrc，讓 vim 使用比較便利
 cp ~/myBionic/vimrc ~/.vimrc
 # =============================================================================
+# 安裝 R 語言環境
+# =============================================================================
+# 安裝 R 環境
+# 如果是用 mini.iso 安裝系統，需要額外安裝 gnupg 套件
+sudo apt-get install -y gnupg
+# 加入公鑰
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+# 加入套件來源
+# 如果是用 mini.iso 安裝系統，需要額外安裝其他套件才能支援 add-apt-repository 
+sudo apt -y install software-properties-common dirmngr apt-transport-https lsb-release ca-certificates
+# 加入 R 套件庫，選用元智大學
+sudo add-apt-repository 'deb https://ftp.yzu.edu.tw/CRAN/bin/linux/ubuntu bionic-cran35/'
+# 更新系統與安裝 R 環境
+sudo apt-get update
+sudo apt-get install -y r-base libcurl4-openssl-dev libxml2-dev
+sudo apt-get autoremove -y
+# 安裝 RStudio IDE 環境
+sudo apt-get install gdebi-core
+wget https://download2.rstudio.org/server/bionic/amd64/rstudio-server-1.2.1335-amd64.deb
+sudo gdebi rstudio-server-1.2.1335-amd64.deb
+# =============================================================================
 # 安裝處理 Jupyter Notebook 環境
 # 使用套件管理系統: Miniconda
 # =============================================================================
@@ -54,7 +75,7 @@ sed -i '340s/<generated>//' ~/.jupyter/jupyter_notebook_config.py
 # 安裝 Jupyter notebook 各種程式語言支援核心
 # 參考連結: https://github.com/jupyter/jupyter/wiki/Jupyter-kernels
 # =============================================================================
-# 2018.06.08 感謝社團法人台灣符式推廣協會陳爽先生與陳厚成先生、先後移植 JeForth 與
+# 2018.06.08 感謝社團法人臺灣符式推廣協會陳爽先生與陳厚成先生、先後移植 JeForth 與
 # PeForth 至 Jupyter Notebook 環境，讓我們可以自由地進行程式語言教學。
 # =============================================================================
 # 支援 nodejs 核心
@@ -80,7 +101,7 @@ sudo /home/daniel/miniconda/bin/install_c_kernel
 # 支援 PeForth 核心
 # 參考連結: https://github.com/hcchengithub/peforth
 # =============================================================================
-# 安裝 PeForth(2018.07.19 PeForth 1.21 版)
+# 安裝 PeForth(2019.07.03 PeForth 1.23 版)
 pip install peforth
 
 # 建立目錄
@@ -90,25 +111,12 @@ mkdir ~/miniconda/share/jupyter/kernels/peforth
 cp ~/myBionic/kernel.json ~/miniconda/share/jupyter/kernels/peforth
 sed -i '4s/3.6/3.7/' ~/miniconda/share/jupyter/kernels/peforth/kernel.json
 sed -i '4s/~/./' ~/miniconda/share/jupyter/kernels/peforth/kernel.json
+# 異常，待處理
+
 # =============================================================================
 # 支援 R 核心
 # 參考連結: https://irkernel.github.io/
 # =============================================================================
-# 安裝 R 環境
-# 如果是用 mini.iso 安裝系統，需要額外安裝 gnupg 套件
-sudo apt-get install -y gnupg
-# 加入公鑰
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
-# 加入套件來源
-# 如果是用 mini.iso 安裝系統，需要額外安裝其他套件才能支援 add-apt-repository 
-sudo apt -y install software-properties-common dirmngr apt-transport-https lsb-release ca-certificates
-# 加入 R 套件庫，選用元智大學
-sudo add-apt-repository 'deb https://ftp.yzu.edu.tw/CRAN/bin/linux/ubuntu bionic-cran35/'
-# 更新系統與安裝 R 環境
-sudo apt-get update
-sudo apt-get install -y r-base libcurl4-openssl-dev libxml2-dev
-sudo apt-get autoremove -y
-
 # 安裝 jupyter notebook R Kernel
 sudo apt-get install -y build-essential libcurl4-gnutls-dev libssl-dev
 sudo apt-get install -y libzmq3-dev
