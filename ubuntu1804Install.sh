@@ -21,6 +21,18 @@ git clone https://github.com/r4forth/myBionic.git
 # 複製 vimrc，讓 vim 使用比較便利
 cp ~/myBionic/vimrc ~/.vimrc
 # =============================================================================
+# 安裝 gforth 環境
+# 1. Ubuntu 套件庫預設 gforth 版本
+# 2. snap 第三方維護版本
+# =============================================================================
+# 1. gforth 0.7.3
+sudo apt install -y gforth
+# 2. gforth 0.7.9
+sudo apt install -y snapd
+sudo snap install gforth-mtrute --edge
+# 執行路徑在 /snap/bin/gforth-mtrute.gforth
+
+# =============================================================================
 # 安裝 R 語言環境
 # =============================================================================
 # 安裝 R 環境
