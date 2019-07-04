@@ -31,6 +31,16 @@ sudo apt install -y gforth
 sudo apt install -y snapd
 sudo snap install gforth-mtrute --edge
 # 執行路徑在 /snap/bin/gforth-mtrute.gforth
+# =============================================================================
+# 安裝 Arduino 環境
+# 1. Ubuntu 套件庫預設太舊
+# 2. 到官網下載，2019/07/04 Arduino IDE 1.8.9 版
+# daniel@t420s:/opt$ sudo find / -name Arduino
+# /home/daniel/Arduino
+# /opt/arduino-1.8.5/libraries/TFT/examples/Arduino
+# =============================================================================
+
+
 
 # =============================================================================
 # 安裝 R 語言環境
