@@ -42,6 +42,28 @@ sudo apt-get install gdebi-core
 wget https://download2.rstudio.org/server/bionic/amd64/rstudio-server-1.2.1335-amd64.deb
 sudo gdebi rstudio-server-1.2.1335-amd64.deb
 # =============================================================================
+# 安裝 C 語言開發環境與 The Art and Science of C 範例程式庫
+# https://www.stickmind.com/code-c/01-development-tools/
+# 教科書附件下載連結
+# 公用函式庫: https://www.ime.usp.br/~pf/Roberts/C-library/unix-xwindows/cslib.shar
+# 範例程式碼: https://www.ime.usp.br/~pf/Roberts/C-library/programs/archive/programs.shar
+# =============================================================================
+sudo apt-get install -y build-essential
+# 安裝 csh 與 X11 開發工具
+sudo apt install -y csh libx11-dev
+# 下載範例程式庫
+cd ~
+cp ~/myBionic/cslib.shar cslib.shar
+sh cslib.shar
+cd cslib
+cp ~/myBionic/programs.shar programs.shar
+make 
+# 新增環境變數路徑
+sed -i '$ a\export PATH="$HOME/cslib:$PATH"' ~/.bashrc
+source ~/.bashrc
+sh programs.shar
+cd ~
+# =============================================================================
 # 安裝處理 Jupyter Notebook 環境
 # 使用套件管理系統: Miniconda
 # =============================================================================
