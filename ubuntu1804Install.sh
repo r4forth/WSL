@@ -20,6 +20,15 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 git clone https://github.com/r4forth/myBionic.git
 # 複製 vimrc，讓 vim 使用比較便利
 cp ~/myBionic/vimrc ~/.vimrc
+
+# =============================================================================
+# 部份 Boadcom 無線網卡可能會無法使用，請執行
+# =============================================================================
+# sudo apt-get update 
+# sudo apt-get install firmware-b43-installer 
+# sudo apt-get remove bcmwl-kernel-source
+# =============================================================================
+
 # =============================================================================
 # 安裝 gforth 環境
 # 1. Ubuntu 套件庫預設 gforth 版本
