@@ -63,6 +63,8 @@ cd yosys
 make -j$(nproc)
 sudo make install
 # Installing NextPNR
+# Eigen3
+sudo apt-get install libeigen3-dev
 git clone https://github.com/YosysHQ/nextpnr nextpnr
 cd nextpnr
 cmake -DARCH=ice40 -DCMAKE_INSTALL_PREFIX=/usr/local .
